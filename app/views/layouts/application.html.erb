@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Myfallout4</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+  	<!-- #devise -->
+		<p class="notice" id="green"><%= notice %></p>
+		<p class="alert" id="red"><%= alert %></p>
+
+    <%= yield %>
+  </body>
+</html>
