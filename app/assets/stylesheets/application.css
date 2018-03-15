@@ -26,6 +26,9 @@ h4 {
 .container-fluid {
     padding: 60px 50px;
 }
+.bg-darkgrey {
+    background-color: darkgrey;
+}
 .bg-grey {
     background-color: #f6f6f6;
 }
