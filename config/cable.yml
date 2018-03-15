@@ -7,4 +7,4 @@ test:
 production:
   adapter: redis
   url: redis://localhost:6379/1
-  channel_prefix: myfallout4_production
+  channel_prefix: MyFallout4_production
