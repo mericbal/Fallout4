@@ -1,19 +1,71 @@
 <!DOCTYPE html>
 <html>
+  
   <head>
-    <title>Myfallout4</title>
-    <%= csrf_meta_tags %>
+  <title>My Fallout 4</title>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+	<%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	
+	<!-- head -->
+	</head>
 
-  <body>
 
-  	<!-- #devise -->
-		<p class="notice" id="green"><%= notice %></p>
-		<p class="alert" id="red"><%= alert %></p>
+	<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+	
 
+		<nav class="navbar navbar-default navbar-fixed-top">
+		  <div class="container">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>                        
+		      </button>
+		      <%= link_to 'Logo', :root, class: 'navbar-brand' %>
+		    </div>
+		    <div class="collapse navbar-collapse" id="myNavbar">
+		      <ul class="nav navbar-nav navbar-right">
+		        <li><a href="#about">ABOUT</a></li>
+		        <li><a href="#services">SERVICES</a></li>
+		        <li><a href="#portfolio">PORTFOLIO</a></li>
+		        <li><a href="#pricing">PRICING</a></li>
+		        <li><a href="#contact">CONTACT</a></li>
+		        <% a = true %>
+		        <% if true %>
+	        		<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+    					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
+      			<% else %>
+						<% end %>
+
+		      </ul>
+		    </div>
+		  </div>
+		</nav>
+
+
+    
     <%= yield %>
+    
+		<div>
+	  	<p class="notice"><%= notice %></p>
+			<p class="alert"><%= alert %></p>
+	  <!-- flash -->
+	  </div>
   </body>
 </html>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
