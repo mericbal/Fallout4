@@ -1,58 +1,63 @@
-<div class="container text-center">
+<div class="container">
 	
-	<h2 id="red"> Sign up </h2>
+		<!-- Modal -->
+	<div class="modal fade" id="signupModal" role="dialog" style="padding-top: 50px">
+	  <div class="modal-dialog">
+	  
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title" id="red">Sign up </h4>
+	      </div>
 
-	<%= render 'signup_form' %>
+	      <div class="modal-body">
+					<form class="form-signup">
+			      <%= render 'devise/registrations/signup_form' %>
+			    </form>
+			  </div>
+	      
+	      <div class="modal-footer">
+	      	<p> Forgot your password ? No problem . </p>
 
-	<%= render "devise/shared/links" %>
+	      	<%= button_to 'Forgot my password !', new_user_password_path, method: :get, class: 'btn btn-default col-lg-4' %>
+	        <%= button_to	'Close', '', method: :get, class: 'btn btn-danger', data: { dismiss: 'modal' } %>
+	      </div>
 
-<!--  -->
+	    </div>
+	    
+	  </div>
+	</div>
+
+<!-- container -->
 </div>
 
-<!--  -->
+
+  <!--  -->
 <style type="text/css">
 	:root {
-	  --input-padding-x: .75rem;
-	  --input-padding-y: .75rem;
+	  --input-padding-x: .5rem;
+	  --input-padding-y: .5rem;
 	}
-
 	html,
 	body {
 	  height: 100%;
 	}
-
-	body {
-	  display: -ms-flexbox;
-	  display: -webkit-box;
-	  display: flex;
-	  -ms-flex-align: center;
-	  -ms-flex-pack: center;
-	  -webkit-box-align: center;
-	  align-items: center;
-	  -webkit-box-pack: center;
-	  justify-content: center;
-	  padding-top: 40px;
-	  padding-bottom: 40px;
-	  background-color: #f5f5f5;
-	}
-
-	.form-signin {
+	.form-signup {
 	  width: 100%;
 	  max-width: 420px;
 	  padding: 15px;
 	  margin: 0 auto;
 	}
-
 	.form-label-group {
 	  position: relative;
 	  margin-bottom: 1rem;
 	}
-
 	.form-label-group > input,
 	.form-label-group > label {
 	  padding: var(--input-padding-y) var(--input-padding-x);
 	}
-
 	.form-label-group > label {
 	  position: absolute;
 	  top: 0;
@@ -66,27 +71,21 @@
 	  border-radius: .25rem;
 	  transition: all .1s ease-in-out;
 	}
-
 	.form-label-group input::-webkit-input-placeholder {
 	  color: transparent;
 	}
-
 	.form-label-group input:-ms-input-placeholder {
 	  color: transparent;
 	}
-
 	.form-label-group input::-ms-input-placeholder {
 	  color: transparent;
 	}
-
 	.form-label-group input::-moz-placeholder {
 	  color: transparent;
 	}
-
 	.form-label-group input::placeholder {
 	  color: transparent;
 	}
-
 	.form-label-group input:not(:placeholder-shown) {
 	  padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
 	  padding-bottom: calc(var(--input-padding-y) / 3);

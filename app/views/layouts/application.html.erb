@@ -23,39 +23,36 @@
 
 
 	<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-	
-
+		
 		<nav class="navbar navbar-default navbar-fixed-top">
-		  <div class="container">
-		    <div class="navbar-header">
-		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>                        
-		      </button>
-		      <%= link_to 'Logo', :root, class: 'navbar-brand' %>
-		    </div>
-		    <div class="collapse navbar-collapse" id="myNavbar">
-		      <ul class="nav navbar-nav navbar-right">
-		        <li><a href="#about">ABOUT</a></li>
-		        <li><a href="#services">SERVICES</a></li>
-		        <li><a href="#portfolio">PORTFOLIO</a></li>
-		        <li><a href="#pricing">PRICING</a></li>
-		        <li><a href="#contact">CONTACT</a></li>
-		        <% a = true %>
-		        <% if true %>
-	        		<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-    					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-							<li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
-      			<% else %>
+			<div class="container">
+			  <div class="navbar-header">
+			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>                        
+			    </button>
+			    <% if current_user %>
+			    	<%= link_to "#{current_user.username}", :root, class: 'navbar-brand' %>
+			    <% else %>
+			    	<%= link_to 'Logo', :root, class: 'navbar-brand' %>
+			    <% end %>
+			  </div>
+			  <div class="collapse navbar-collapse" id="myNavbar">
+			    <ul class="nav navbar-nav navbar-right">
+			      <li><a href="#about">ABOUT</a></li>
+			      <li><a href="#services">SERVICES</a></li>
+			      <li><a href="#portfolio">PORTFOLIO</a></li>
+			      <li><a href="#pricing">PRICING</a></li>
+			      <li><a href="#contact">CONTACT</a></li>
+			      <% if current_user %>
+			      	<li> <%= button_to 'Log out button', destroy_user_session_path, method: :delete, class: 'glyphicon glyphicon-log-out' %> </li>
 						<% end %>
 
-		      </ul>
-		    </div>
-		  </div>
+			    </ul>
+			  </div>
+			</div>
 		</nav>
-
-
     
     <%= yield %>
     
