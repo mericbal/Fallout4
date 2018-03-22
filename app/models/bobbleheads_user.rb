@@ -1,0 +1,2 @@
+class BobbleheadsUser < ApplicationRecord
+end
