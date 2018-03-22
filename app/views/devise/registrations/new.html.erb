@@ -33,11 +33,11 @@
   <br />
   <p id="red"> All fields are required ! </p>
   <div class="actions">
-    <%= f.submit "Sign up", class: 'btn btn-lg btn-primary btn-block' %>
+    <%= f.submit "Sign up", class: 'btn btn-lg btn-primary btn-block button-round' %>
   </div>
 
   <br>
-  <p> <%= link_to 'Cancel', :root, class: "btn btn-sm btn-danger btn-block button4" %> </p>
+  <p> <%= link_to 'Cancel', :root, class: "btn btn-sm btn-danger btn-block button-round" %> </p>
 
   <br>
   <%= render "devise/shared/links" %>
@@ -50,8 +50,6 @@
 
 <!--  -->
 <style type="text/css">
-  .button4 {border-radius: 20px;}
-  .button5 {border-radius: 50%;}
   :root {
     --input-padding-x: .75rem;
     --input-padding-y: .75rem;
