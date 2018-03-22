@@ -8,4 +8,9 @@ class User < ApplicationRecord
   #
   validates :username, uniqueness: true
   #
+
+  # has_many :bobbleheads, through: :users_bobbleheads, source: :bobblehead
+  has_and_belongs_to_many :bobbleheads
+
+  #
 end
