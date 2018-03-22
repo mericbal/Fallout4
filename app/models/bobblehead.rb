@@ -1,2 +1,0 @@
-class Bobblehead < ApplicationRecord
-end

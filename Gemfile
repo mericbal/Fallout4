@@ -30,13 +30,15 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# MY GEMS
-gem 'bootstrap'
+
+# my gems
 gem 'devise'
+gem 'bootstrap'
 gem 'jquery-rails'
 gem 'popper_js'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 #
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

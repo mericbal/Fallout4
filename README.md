@@ -1,25 +1,21 @@
-# For devise 
+# gem files 
+
+gem 'devise'
+gem 'bootstrap'
+gem 'jquery-rails'
+gem 'popper_js'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+
+#
+
+
+# devise
 
 rails g devise:install
 
-rails g devise User
-
 rails g devise:views
 
+rails g devise User
 
+# and changes has been made for devise
 
-# application_helper # for modal form fix with bootstrap and devise
-	
-	def resource_name
-		:user
-	end
-
-	def resource
-		@resource ||= User.new
-	end
-
-	def devise_mapping
-		@devise_mapping ||= Devise.mappings[:user]
-	end
-
-#
