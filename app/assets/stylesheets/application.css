@@ -54,6 +54,7 @@ h4 {
 .jumbotron {
     background-color: dimgray;
     color: #fff;
+    margin-bottom: 0px;
     padding: 100px 25px;
     font-family: Montserrat, sans-serif;
 }
