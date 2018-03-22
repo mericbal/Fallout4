@@ -2,14 +2,16 @@
 <%= render 'jumbotron' %>
 
 <!--  -->
+<% if !current_user %>
 <div>
-    <%= image_tag 'fallout4.jpg', class: 'img-responsive'%>
+  <%= image_tag 'fallout4.jpg', class: 'img-responsive'%>
 </div>
+<% end %>
 
 
 
 <!-- Container (About Section) -->
-<div id="about" class="container-fluid">
+<div id="bobbleheads" class="container-fluid">
   <%= render 'about' %>
 </div>
 
