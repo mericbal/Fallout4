@@ -1,0 +1,31 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <ul class="nav navbar-nav navbar-left">
+        <li><%= link_to 'MB.com', :root, class: 'navbar-brand' %> </li>
+
+        <li> <%= link_to 'back to home', :root %> </li>
+      </ul>
+    </div>
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#bobbleheads">bobbleheads</a></li>
+        <% if current_user %>
+          <li> <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-danger btn-lg glyphicon-log-out' %> </li>
+        <% else %>
+          <li> <%= button_to 'Log in', new_user_session_path,method: :get, class: 'btn btn-default btn-lg' %> </li>
+          <li> <%= button_to 'Sign up', new_user_registration_path,method: :get, class: 'btn btn-default btn-lg' %> </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <!--  -->
+  </div>
+</nav>
