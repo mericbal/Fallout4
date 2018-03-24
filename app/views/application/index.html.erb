@@ -4,7 +4,8 @@
 <!--  -->
 <% if !current_user %>
 <div>
-  <%= image_tag 'fallout4.jpg', class: 'img-responsive'%>
+  <% img = ['fallout4', 'fallout41']  %>
+  <%= image_tag "#{img.sample}.jpg", class: 'img-responsive'%>
 </div>
 <% end %>
 
