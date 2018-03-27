@@ -4,32 +4,24 @@
     
     <thead class="text-center">
       <tr id="red">
-        <th>Name</th> <th>Location</th> <th>Effect</th> <th>game_id</th> 
-        <% if current_user %>
-          <th> found ?</th>
-        <% end %>
-
+        <th>Name</th> <th>Location</th> <th>Effect</th> <th>game_id</th> <th> found ?</th>
       </tr>
     </thead>
 
     <tbody>
-    <% @sp.each do |b| %>
+    <% @bobbleheads.each do |b| %>
     <% if b.found %>
       <tr class="success">
     <% end %>
       <tr class="danger">
         <td style="width: 200px"> <%= b.name %> </td>
         <td> <%= b.location %> </td>
-        <td style="width: 200px"> <%= b.effect %> </td>
+        <td style="width: 100px"> <%= b.effect %> </td>
         <td style="width: 100px"> <%= b.game_id %> </td>
-        
-        <% if current_user %>
-          <% if b.found %>
-            <td style="width: 100px"> <i id="green" class="fa fa-check"> </i></td>
-          <% else %>
-            <td style="width: 100px">  </i> <%= button_to 'found it', find_bobblehead_path(b), method: :get, class: 'btn btn-xs btn-danger' %> </td>
-          <% end %>
+        <% if b.found %>
+          <td style="width: 100px"> <i id="green" class="fa fa-check"></i></td>
         <% end %>
+        <td style="width: 100px"> <i id="red" class="fa fa-remove"> </i> </td>
       </tr>
     <% end %>
     </tbody>

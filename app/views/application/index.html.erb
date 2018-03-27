@@ -5,16 +5,22 @@
 <% if !current_user %>
 <div>
   <% img = ['fallout4', 'fallout41']  %>
-  <%= image_tag "#{img.sample}.jpg", class: 'img-responsive'%>
+  <%= image_tag "fallout4.jpg", class: 'img-responsive'%>
 </div>
 <% end %>
 
 
 
-<!-- Container (About Section) -->
-<div id="bobbleheads" class="container-fluid">
+<!-- Container (Bobbleheads Section) -->
+<div id="bobbleheads" class="container-fluid bg-grey">
+  <%= render 'bobbleheads' %>
+</div>
+
+<div id="magazines" class="container-fluid bg-grey">
   <%= render 'about' %>
 </div>
+
+
 
 <!-- Container (Services Section) -->
 <div id="services" class="container-fluid text-center">
