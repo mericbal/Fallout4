@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
   
   # devise
-  devise_for :users
+  devise_for :users do 
+  	member { get 'bobbleheads'}
+  end
 
   #
 	root to: "application#index"
 
 	get '/test1' => 'application#test1'
+	get '/dashboard' => 'dashboard#index'
 	# get '/bobbleheads' => 'bobbleheads#index'
 	# get '/find' => 'bobbleheads#find'
 

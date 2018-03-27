@@ -19,7 +19,7 @@
         <li><a href="#pricing">PRICING</a></li>
         <li><a href="#contact">CONTACT</a></li>
         <% if current_user %>
-          <li> <%= button_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-danger btn-lg glyphicon-log-out' %> </li>
+          <li> <%= button_to 'Log out', destroy_user_session_path, method: :delete %> </li>
         <% else %>
           <li> <%= button_to 'Log in', new_user_session_path,method: :get, class: 'btn btn-default' %> </li>
           <li> <%= button_to 'Sign up', new_user_registration_path,method: :get, class: 'btn btn-default' %> </li>

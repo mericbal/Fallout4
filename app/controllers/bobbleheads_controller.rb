@@ -8,10 +8,10 @@ class BobbleheadsController < ApplicationController
 
 	def find
 		@b = Bobblehead.find(params[:id])
+		@b.found = true
 		if current_user.bobbleheads.include? @b
 			redirect_to bobbleheads_path, alert: 'Nooo'
 		else
-			@b.found = true
 			current_user.bobbleheads << @b
 			redirect_to bobbleheads_path, notice: 'Yess'
 		end
