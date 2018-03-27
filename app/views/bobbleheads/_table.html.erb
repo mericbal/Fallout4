@@ -15,9 +15,10 @@
     <tbody>
     <% @sp.each do |b| %>
     <% if b.found %>
-      <tr class="success">
-    <% end %>
+      <tr>
+    <% else %>
       <tr class="danger">
+    <% end %>
         <td style="width: 200px"> <%= b.name %> </td>
         <td> <%= b.location %> </td>
         <td style="width: 200px"> <%= b.effect %> </td>
