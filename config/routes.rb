@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 	# get '/bobbleheads' => 'bobbleheads#index'
 	# get '/find' => 'bobbleheads#find'
 
+
 	resources :bobbleheads, only: [:index] do
 		member { get 'find'}
 	end
