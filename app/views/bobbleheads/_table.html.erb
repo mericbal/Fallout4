@@ -1,44 +1,82 @@
-<div class="table-responsive">
+<% if current_user %>
+  
+  <div class="table-responsive">
 
-  <table class="table table-hover text-center table-bordered">
-    
-    <thead class="text-center">
-      <tr id="red">
-        <th>Name</th> <th>Location</th> <th>Effect</th> <th>game_id</th> 
-        <% if current_user %>
-          <th> found ?</th>
-        <% end %>
+    <table class="table table-hover text-center table-bordered">
+      
+      <thead class="text-center">
+        <tr id="red">
+          <th> # </th><th>Name</th> <th>Location</th> <th>Effect</th> <th> found ?</th> <th>game_id</th>
+        </tr>
+      </thead>  
 
-      </tr>
-    </thead>
-
-    <tbody>
-    <% @sp.each do |b| %>
-    <% if b.found %>
-      <tr>
-    <% else %>
-      <tr class="danger">
-    <% end %>
-        <td style="width: 200px"> <%= b.name %> </td>
-        <td> <%= b.location %> </td>
-        <td style="width: 200px"> <%= b.effect %> </td>
-        <td style="width: 100px"> <%= b.game_id %> </td>
-        
-        <% if current_user %>
-          <% if b.found %>
-            <td style="width: 100px"> <i id="green" class="fa fa-check"> </i></td>
+      <tbody>
+      <% @bobbleheads.each.with_index(1) do |b,i| %>
+        <tr>
+          <td> <%= i %> </td>
+          <td style="width: 200px"> <%= b.name %> </td>
+          <td> <%= b.location %> </td>
+          <td style="width: 200px"> <%= b.effect %> </td>
+          <% if current_user.bobbleheads.include? b %>
+            <td> <i id="blue" class="fa fa-check"> </i></td>
           <% else %>
-            <td style="width: 100px">  </i> <%= button_to 'found it', find_bobblehead_path(b), method: :get, class: 'btn btn-xs btn-danger' %> </td>
+            <td> <%= button_to 'found it !', find_bobblehead_path(b), method: :get, class: 'btn btn-xs btn-success' %> </td>
           <% end %>
-        <% end %>
-      </tr>
-    <% end %>
-    </tbody>
+          <td style="width: 100px"> <%= b.game_id %> </td>
+        </tr>
+      <% end %>
+      </tbody>
 
-  </table>
+    </table>
+    
+    <!--  -->
+  </div>
 
-  <!--  -->
-</div>
+<!--  -->
+<% else %>
+<!--  -->
+
+  <div class="table-responsive">
+
+    <table class="table table-hover text-center table-bordered">
+      
+      <thead class="text-center">
+        <tr id="red">
+          <th> # </th><th>Name</th> <th>Location</th> <th>Effect</th> <th>game_id</th> 
+        </tr>
+      </thead>
+
+      <tbody>
+      <% @bobbleheads.each.with_index(1) do |b,i| %>
+        <tr>
+          <td> <%= i %> </td>
+          <td style="width: 200px"> <%= b.name %> </td>
+          <td> <%= b.location %> </td>
+          <td style="width: 200px"> <%= b.effect %> </td>
+          <td style="width: 100px"> <%= b.game_id %> </td>
+        </tr>
+      <% end %>
+      </tbody>
+
+    </table>
+    <!--  -->
+  </div>
+
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <style type="text/css">
   th {

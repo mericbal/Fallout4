@@ -1,5 +1,17 @@
 <div class="container-fluid bg-grey">
 	
-	<h1> Welcome back , <i id="green"> <%= current_user.username %> </i> ! </h2>
+	<h1> Welcome back , <i id="green"> <%= current_user.username %> </i> ! </h1>
+
+	<h1> Bobs = 20 / <%= current_user.bobbleheads.count %> </h1>
+
+	<div class="progress">
+		<% a = bob_percentage(current_user) %>
+    <div class="progress-bar progress-bar-striped progress-bar-<%= a < 40 ? 'danger': a < 80 ? 'warning' : 'success active' %>" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:<%= a %>%">
+    	<%= a %>% of bobbleheads found so far
+    </div>
+  </div>
+
+
+	<h1> % <%= bob_percentage(current_user) %> </h1>
 
 </div>
