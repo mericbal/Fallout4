@@ -4,7 +4,7 @@ class DashboardController < ApplicationController
 #
 
 	def index
-		#
+		@bobbleheads = current_user.bobbleheads
 	end
 
 #

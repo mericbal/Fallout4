@@ -12,13 +12,17 @@
 
       <tbody>
       <% @bobbleheads.each.with_index(1) do |b,i| %>
+        <% if current_user.bobbleheads.include? b %>
+        <tr class="success">
+        <% else %>
         <tr>
+        <% end %>
           <td> <%= i %> </td>
           <td style="width: 200px"> <%= b.name %> </td>
           <td> <%= b.location %> </td>
           <td style="width: 200px"> <%= b.effect %> </td>
           <% if current_user.bobbleheads.include? b %>
-            <td> <i id="blue" class="fa fa-check"> </i></td>
+            <td> <i id="green" class="fa fa-check"> </i></td>
           <% else %>
             <td> <%= button_to 'found it !', find_bobblehead_path(b), method: :get, class: 'btn btn-xs btn-success' %> </td>
           <% end %>
